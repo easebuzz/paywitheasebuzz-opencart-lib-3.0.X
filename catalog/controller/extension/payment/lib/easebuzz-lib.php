@@ -499,22 +499,9 @@ class EasebuzzResponse {
 
         if ($error === true) {
             if (Misc::reverse_hash($this->params, $this->salt, $this->params['status']) === $this->params['hash']) {
-                switch ($this->params['status']) {
-                    case 'success' :
-                        return array(
-                            'status' => Misc::SUCCESS,
-                            'data' => $this->params['surl']);
-                        break;
-                    case 'failure' :
-                        return array(
-                            'status' => Misc::SUCCESS,
-                            'data' => $this->params['furl']);
-                        break;
-                    default :
-                        return array(
-                            'status' => Misc::FAILURE,
-                            'data' => 'Unmapped status');
-                }
+                return array(
+                    'status' => Misc::SUCCESS,
+                    'data' => $this->params['surl']);
             } else {
                 return array(
                     'status' => Misc::FAILURE,

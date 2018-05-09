@@ -3,8 +3,10 @@
     #easebuzz-error {color: #CC0000; font-weight: bold}
 </style>
 
-<div class="pull-right">
-    <img src="{{ easebuzz_button }}" id="easebuzz-pay"/>
+<div class="buttons">
+  <div class="pull-right">
+    <input type="button" value="Make payment" id="easebuzz-pay" data-loading-text="Please wait" class="btn btn-primary" />
+  </div>
 </div>
 <div id="easebuzz-error"></div>
 <script type="text/javascript">
